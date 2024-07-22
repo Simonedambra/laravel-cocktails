@@ -9,14 +9,7 @@ use Faker\Generator as Faker;
 
 class CocktailSeeder extends Seeder
 {
-<<<<<<< HEAD
-    public function run(): void
-    {
 
-=======
-    /**
-     * Run the database seeds.
-     */
     public function run(faker $faker): void
     {
         for ($i = 0; $i < 10; $i++) {
@@ -35,6 +28,5 @@ class CocktailSeeder extends Seeder
         };
 
         }
->>>>>>> feat/seeder
     }
 
