@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 
 class CocktailController extends Controller
 {
-    function show()
-    {
-        // Query al db
-        $cocktails = Cocktails::all();
+    // function show()
+    // {
+    //     // Query al db
+    //     $cocktails = Cocktails::all();
 
-        return view('welcome', compact('cocktails'));
-    }
+    //     return view('welcome', compact('cocktails'));
+    // }
 }

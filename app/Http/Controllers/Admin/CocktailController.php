@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cocktails;
 use Illuminate\Http\Request;
 
 class CocktailController extends Controller
@@ -10,7 +11,10 @@ class CocktailController extends Controller
 
     public function index()
     {
+              // Query al db
+        $cocktails = Cocktails::all();
 
+        return view('welcome', compact('cocktails'));
     }
 
 
