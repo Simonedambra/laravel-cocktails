@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\CocktailController;
+use App\Http\Controllers\Admin\CocktailController;
+use App\Models\Cocktails;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,12 @@ use App\Http\Controllers\Guest\CocktailController;
 |
 */
 
-Route::get('/', [CocktailController::class, 'show']);
+
+Route::get('/', function () {
+    $cocktails = Cocktails::all();
+
+    return view('welcome', compact('cocktails'));
+});
+
+
+Route::resource('cocktails', CocktailController::class);
