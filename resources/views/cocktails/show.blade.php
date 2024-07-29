@@ -1,24 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Titolo</title>
-    @vite('resources/scss/app.scss')
 
-</head>
+@section('title-cocktail')
+    cocktail-list
+@endsection
 
-<body>
-    <div class="container">
-        <a href="{{ route('cocktails.index') }}">torna alla home</a>
-        <br>
-        <a href="{{ route('cocktails.edit', $cocktail) }}">Modifica cocktail</a>
-        <hr>
-        <h1>{{ $cocktail['name'] }}</h1>
-        <p>{{ $cocktail['ingredienti'] }}</p>
-    </div>
-</body>
+@section('header')
+    <header class="head d-flex justify-content-center">
+        <h1 class="color-white">cocktails</h1class=color-white>
+    </header>
+@endsection
 
-</html>
+@section('main')
+    <main>
+        <div class="container">
+            <a href="{{ route('cocktails.index') }}">torna alla home</a>
+            <br>
+            <a href="{{ route('cocktails.edit', $cocktail) }}">Modifica cocktail</a>
+            <hr>
+            <h1>{{ $cocktail['name'] }}</h1>
+            <p>{{ $cocktail['ingredienti'] }}</p>
+        </div>
+    </main>
+@endsection
+
+@section('footer')
+    <footer>
+        footer
+
+    </footer>
+@endsection
