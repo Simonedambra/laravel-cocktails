@@ -13,30 +13,30 @@
 
 @section('main')
     <main>
-        <!-- <div class="container d-flex flex-wrap justify-content-center">
-                @foreach ($cocktails as $cocktail)
-    <div class="bg-gray gap-1 p-4 m-3">
-                        <h2>{{ $cocktail->name }}</h2>
-                        <p>{{ $cocktail->ingredienti }}</p>
-                        <h4>{{ $cocktail->base_alcolica }}</h4>
-                        <h4>{{ $cocktail->paese_di_origine }}</h4>
-                        <h4>{{ $cocktail->is_alcoholic }}</h4>
-                        <h4>{{ $cocktail->flavor }}</h4>
+         <div class="container text-center py-5">
 
-                    </div>
-    @endforeach
-            </div> -->
+            <div>
+                <h1>Benvenuto nel nostro eBar</h1>
+                <a  href="{{route('cocktails.index')}}">
+                    <button 
+                        class="btn btn-success"
+                        >Guarda il menù
+                    </button>
+                </a>
+            </div>
+
+        </div> 
         <ul>
-            @foreach ($cocktails as $cocktail)
-                <li><a href="">{{ $cocktail->name }}</a></li>
-            @endforeach
+         {{-- @foreach ($cocktails as $cocktail)
+            <li><a>{{ $cocktail->name }}</a></li>
         </ul>
+        @endforeach --}}
     </main>
 @endsection
 
 @section('footer')
-    <footer>
+    {{-- <footer>
         footer
 
-    </footer>
+    </footer> --}}
 @endsection

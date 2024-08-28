@@ -54,7 +54,7 @@
                 </div>
                 {{-- SE è ALCOLICO --}}
                 <div class="mb-3">
-                    <div class="form-label">E' alcolico?</div>
+                    <div class="form-label">alcolico?</div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="is_alcoholic" id="si_alcol" value="1"
                             @if ($cocktail->is_alcoholic) checked @endif>
@@ -77,15 +77,15 @@
                     <input type="text" class="form-control" id="gusto" name="flavor"
                         value="{{ old('flavor', $cocktail->flavor) }}">
                 </div>
-                <button type="submit" class="btn btn-success">Crea nuovo Fumetto</button>
+                <button type="submit" class="btn btn-success">Salva modifiche cocktail</button>
             </form>
         </div>
     </main>
 @endsection
 
 @section('footer')
-    <footer>
+    {{-- <footer>
         footer
 
-    </footer>
+    </footer> --}}
 @endsection

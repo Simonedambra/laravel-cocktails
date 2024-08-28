@@ -13,24 +13,40 @@
 
 @section('main')
     <main>
-        <div class="container">
-            <ul class="list-group py-4 ">
-                @foreach ($cocktails as $cocktail)
-                    <li class="list-group-item"><a href="{{ route('cocktails.show', $cocktail->$id) }}">{{ $cocktail->name }}
-                            |
-                            {{ $cocktail->ingredienti }}</a></li>
-                @endforeach
-            </ul>
-            <hr>
-            <a href="{{ route('cocktails.create') }}">Crea nuovo coktail</a>
-
+        <div class="py-5 text-center">
+            <a href="{{ route('cocktails.create') }}">&rarr; Aggiungi un nuovo Cocktail &larr;</a>
         </div>
+
+        @if (@session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+        @endif
+        
+            <main>
+                <div class="container d-flex flex-wrap justify-content-center">
+                   @foreach ($cocktails as $cocktail)
+                       <div class="bg-gray gap-1 p-4 m-3">
+                           <a href="{{ route('cocktails.show', $cocktail)}}">
+                               <h2 class="text-center">{{ $cocktail->name }}</h2>
+                           </a>
+                           <p>{{ $cocktail->ingredienti }}</p>
+                           <h4>{{ $cocktail->base_alcolica }}</h4>
+                           <h4>{{ $cocktail->paese_di_origine }}</h4>
+                           <h4>{{ $cocktail->is_alcoholic }}</h4>
+                           <h4>{{ $cocktail->flavor }}</h4>
+                       </div>
+                   @endforeach
+               </div> 
+               <ul>
+
     </main>
 @endsection
 
 @section('footer')
-    <footer>
+    {{-- <footer>
+        
         footer
 
-    </footer>
+    </footer> --}}
 @endsection

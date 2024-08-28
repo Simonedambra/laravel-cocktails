@@ -34,7 +34,8 @@ class CocktailController extends Controller
         $cocktail->fill($data);
         $cocktail->save();
 
-        return redirect()->route('cocktails.show', $cocktail);
+        // return redirect()->route('cocktails.show', $cocktail);
+        return redirect()->route('cocktails.index')->with('message', 'Nuovo Cocktail Aggiunto!');
     }
 
 
@@ -52,14 +53,20 @@ class CocktailController extends Controller
 
     public function update(UpdateCocktailsRequest $request, Cocktails $cocktail)
     {
+        $cocktail_id = $cocktail->id;
         $data = $request->validated();
         $data['is_alcoholic'] = (intval($data['is_alcoholic']));
         $cocktail->update($data);
-        return redirect()->route('cocktails.show', $cocktail);
+        return redirect()->route('cocktails.index')->with('message', $cocktail_id . ' - Cocktail Aggiornato!');
     }
 
 
-    public function destroy(string $id)
+    public function destroy(Cocktails $cocktail)
     {
+        $cocktail_id = $cocktail->id;
+
+        $cocktail->delete();
+
+        return redirect()->route('cocktails.index')->with('message', $cocktail_id . ' - Cocktail Eliminato!');
     }
 }

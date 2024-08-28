@@ -26,7 +26,7 @@
                 <div class="mb-3">
                     <label for="ingredienti">Ingredienti:</label>
                     <textarea class="form-control" id="ingredienti" style="height: 100px" name='ingredienti'></textarea>
-                    <div id="emailHelp" class="form-text">Separare gli ingredienti da una ', '</div>
+                    <div id="ingredienti" class="form-text">Separare gli ingredienti con una ','</div>
 
                 </div>
                 {{-- BASE ALCOLICA --}}
@@ -41,7 +41,7 @@
                 </div>
                 {{-- SE è ALCOLICO --}}
                 <div class="mb-3">
-                    <div class="form-label">E' alcolico?</div>
+                    <div class="form-label">alcolico?</div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="is_alcoholic" id="si_alcol" value="1"
                             checked>
@@ -62,15 +62,17 @@
                     <label for="gusto" class="form-label">Gusto:</label>
                     <input type="text" class="form-control" id="gusto" name="flavor">
                 </div>
-                <button type="submit" class="btn btn-success">Crea nuovo Fumetto</button>
+                <button type="submit" class="btn btn-success">Crea nuovo cocktail</button>
+                <a class="px-5" href="{{ route('cocktails.index') }}">&rarr; Torna alla Home &larr;</a>
             </form>
+            
         </div>
     </main>
 @endsection
 
 @section('footer')
-    <footer>
+    {{-- <footer>
         footer
 
-    </footer>
+    </footer> --}}
 @endsection
