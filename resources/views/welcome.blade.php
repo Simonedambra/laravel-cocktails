@@ -20,8 +20,7 @@
                 <a  href="{{route('cocktails.index')}}">
                     <button 
                         class="btn btn-success"
-                        >Guarda il menù
-                    </button>
+                        >Guarda il menù</button>
                 </a>
             </div>
 
@@ -34,9 +33,3 @@
     </main>
 @endsection
 
-@section('footer')
-    {{-- <footer>
-        footer
-
-    </footer> --}}
-@endsection

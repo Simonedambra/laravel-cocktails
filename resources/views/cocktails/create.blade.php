@@ -15,6 +15,19 @@
     <main>
         <h1>Creazione nuovo cocktail</h1>
         <div class="container">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
+
             <form action="{{ route('cocktails.store') }}" method="POST">
                 @csrf
                 {{-- NOME --}}
@@ -65,7 +78,7 @@
                 <button type="submit" class="btn btn-success">Crea nuovo cocktail</button>
                 <a class="px-5" href="{{ route('cocktails.index') }}">&rarr; Torna alla Home &larr;</a>
             </form>
-            
+
         </div>
     </main>
 @endsection

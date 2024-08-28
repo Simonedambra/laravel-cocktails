@@ -24,8 +24,8 @@ class StoreCocktailsRequest extends FormRequest
     {
         return [
             // 'name' => ['required', 'string', Rule::unique('cocktails')],
-            'name' => ['required', 'string'],
-            'ingredienti' => ['string', 'nullable'],
+            'name' => ['required', 'unique:cocktails', 'string'],
+            'ingredienti' => ['required'],
             'base_alcolica' => ['string', 'nullable'],
             'paese_di_origine' => ['string', 'nullable'],
             'is_alcoholic' => ['string', 'max:1'],
